@@ -50,3 +50,7 @@ tr:nth-child(even) {
   display: block;
   text-align: right;
 }
+
+div:hover {
+  font-weight: bold;
+}
