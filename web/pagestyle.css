@@ -36,17 +36,17 @@ tr:nth-child(even) {
   height: 800px;
 }
 
-#Div1 {
+#div1 {
   display: block;
   text-align: left;
 }
 
-#Div2 {
+#div2 {
   display: block;
   text-align: center;
 }
 
-#Div3 {
+#div3 {
   display: block;
   text-align: right;
 }
