@@ -32,6 +32,21 @@ tr:nth-child(even) {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 1200px;
-  height: 1200px;
+  width: 800px;
+  height: 800px;
+}
+
+#Div1 {
+  display: block;
+  text-align: left;
+}
+
+#Div2 {
+  display: block;
+  text-align: center;
+}
+
+#Div3 {
+  display: block;
+  text-align: right;
 }
