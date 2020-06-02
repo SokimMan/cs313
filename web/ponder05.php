@@ -10,11 +10,6 @@ try
   echo 'Are we doing anything?';
   $dbUrl = getenv('DATABASE_URL');
 
-  if (empty($dbUrl)) {
-  // example localhost configuration URL with postgres username and a database called db
-  $dbUrl = "iqpbnpewcumcag://iqpbnpewcumcag:8f20103a48b3a0cc5071ead6d09c37a449052b71cc6ee4f114e3dabe6f20182f@localhost:5432/dc1fiuq2in7au3";
-  }
-
   $dbOpts = parse_url($dbUrl);
 
   $dbHost = $dbOpts["host"];
