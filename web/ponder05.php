@@ -1,3 +1,8 @@
+<?php
+require "dbConnect.php";
+$db = get_db();
+?>
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -5,38 +10,20 @@
 <p>Display database:</p>
 
 <?php
-try
-{
-  echo 'Are we doing anything?';
-  $dbUrl = getenv('DATABASE_URL');
+$statement = $db->prepare("SELECT firstname, lastname FROM Salesforce");
+$statement->execute();
 
-  $dbOpts = parse_url($dbUrl);
-
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-  echo $db;
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-
-
-$statement = $db->query('SELECT firstname, lastname FROM Salesforce');
+// Go through each result
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-  echo 'user: ' . $row['firstname'] . ' password: ' . $row['lastname'] . '<br/>';
-}
+	// The variable "row" now holds the complete record for that
+	// row, and we can access the different values based on their
+	// name
+	$firstname = $row['firstname'];
+	$lastname = $row['lastname'];
 
-echo 'We end here';
+	echo "<p><strong>$firstname </strong> - \"$lastname\"<p>";
+}
 ?>
 </body>
 </html>
