@@ -35,13 +35,13 @@ catch (PDOException $ex)
 }
 
 
-foreach ($db->query('SELECT , firstname, lastname FROM Salesforce') as $row)
+$statement = $db->query('SELECT firstname, lastname FROM Salesforce');
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-  echo 'do we get here';
-  echo 'Salesforce first name: ' . $row['firstname'];
-  echo 'Salesforce last name: ' . $row['lastname'];
-  echo '<br/>';
+  echo 'user: ' . $row['firstname'] . ' password: ' . $row['lastname'] . '<br/>';
 }
+
+echo 'We end here';
 ?>
 </body>
 </html>
