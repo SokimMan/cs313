@@ -37,6 +37,7 @@ catch (PDOException $ex)
 
 foreach ($db->query('SELECT , firstname, lastname FROM Salesforce') as $row)
 {
+  echo 'do we get here';
   echo 'Salesforce first name: ' . $row['firstname'];
   echo 'Salesforce last name: ' . $row['lastname'];
   echo '<br/>';
