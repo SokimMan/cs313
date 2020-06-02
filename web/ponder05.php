@@ -7,7 +7,7 @@
 <?php
 try
 {
-  
+  echo 'Are we doing anything?';
   $dbUrl = getenv('DATABASE_URL');
 
   if (empty($dbUrl)) {
