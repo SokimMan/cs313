@@ -15,3 +15,9 @@ CREATE TABLE Dynamics (
     	City varchar(255),
         PRIMARY KEY (ContactID)
 ); 
+
+INSERT INTO Salesforce (ExternalID, LastName, FirstName, Address, City)
+VALUES ('X13', 'Mikos', 'Gage', '13568 W Montebello Ave', 'Phoenix');
+
+INSERT INTO Dynamics (ContactID, LastName, FirstName, Address, City)
+VALUES ('X13', 'Mikos', 'Gage', '13568 W Montebello Ave', 'Phoenix');
