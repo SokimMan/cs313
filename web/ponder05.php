@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 <body>
 
+<?php
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -27,10 +29,10 @@ catch (PDOException $ex)
 
 foreach ($db->query('SELECT , firstname, lastname FROM salesforce') as $row)
 {
-  echo 'salesforce: ' . $row['firstname'];
-  echo ' dynamics: ' . $row['lastname'];
+  echo 'salesforce first name: ' . $row['firstname'];
+  echo 'salesforce last name: ' . $row['lastname'];
   echo '<br/>';
 }
-
+?>
 </body>
 </html>
