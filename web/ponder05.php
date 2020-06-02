@@ -27,10 +27,10 @@ catch (PDOException $ex)
 }
 
 
-foreach ($db->query('SELECT , firstname, lastname FROM salesforce') as $row)
+foreach ($db->query('SELECT , firstname, lastname FROM Salesforce') as $row)
 {
-  echo 'salesforce first name: ' . $row['firstname'];
-  echo 'salesforce last name: ' . $row['lastname'];
+  echo 'Salesforce first name: ' . $row['firstname'];
+  echo 'Salesforce last name: ' . $row['lastname'];
   echo '<br/>';
 }
 ?>
