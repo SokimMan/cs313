@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<p>Display database</p>
+<p>Display database:</p>
 
 <?php
 try
@@ -12,7 +12,7 @@ try
 
   if (empty($dbUrl)) {
   // example localhost configuration URL with postgres username and a database called db
-  $dbUrl = "postgres://postgres:password@localhost:58767/db";
+  $dbUrl = "postgres://postgres:password@localhost:58767/DATABASE";
   }
 
   $dbOpts = parse_url($dbUrl);
