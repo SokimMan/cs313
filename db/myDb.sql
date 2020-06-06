@@ -16,8 +16,24 @@ CREATE TABLE Dynamics (
         PRIMARY KEY (ContactID)
 ); 
 
-INSERT INTO Salesforce (ExternalID, LastName, FirstName, Address, City)
+INSERT INTO salesforce (ExternalID, LastName, FirstName, Address, City)
 VALUES ('X13', 'Mikos', 'Gage', '13568 W Montebello Ave', 'Phoenix');
 
-INSERT INTO Dynamics (ContactID, LastName, FirstName, Address, City)
+INSERT INTO salesforce (externalid, lastname, firstname, address, city)
+VALUES
+('X14', 'Mikos', 'Cole', '13568 W Montebello Ave', 'Phoenix');
+
+INSERT INTO salesforce (externalid, lastname, firstname, address, city)
+VALUES
+('X15', 'Mikos', 'Caden', '13568 W Montebello Ave', 'Phoenix');
+
+INSERT INTO dynamics (ContactID, LastName, FirstName, Address, City)
 VALUES ('X13', 'Mikos', 'Gage', '13568 W Montebello Ave', 'Phoenix');
+
+INSERT INTO dynamics (ContactID, lastname, firstname, address, city)
+VALUES
+('X14', 'Mikos', 'Cole', '13568 W Montebello Ave', 'Phoenix');
+
+INSERT INTO dynamics (ContactID, lastname, firstname, address, city)
+VALUES
+('X15', 'Mikos', 'Caden', '13568 W Montebello Ave', 'Phoenix');
