@@ -7,7 +7,9 @@ $db = get_db();
 <html>
 <body>
 
-<p>Display database:</p>
+
+
+<h1>Salesforce Contacts:</h1>
 
 <?php
 $statement = $db->prepare("SELECT firstname, lastname FROM Salesforce");
@@ -25,6 +27,8 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	echo "<p><strong>$firstname </strong> - \"$lastname\"<p>";
 }
 ?>
+
+<a href="salesforceEntry.php">Insert new Contact to Salesforce</a>
 
 <?php
 $statement = $db->prepare("SELECT firstname, lastname FROM Dynamics");
