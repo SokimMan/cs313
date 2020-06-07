@@ -13,7 +13,7 @@
 ***********************************************************/
 
 // get the data from the POST
-$contactid = $_POST['contactid'];
+$externalid = $_POST['externalid'];
 $lastname = $_POST['lastname'];
 $firstname = $_POST['firstname'];
 $address = $_POST['address'];
@@ -38,12 +38,12 @@ try
 	// Add the Scripture
 
 	// We do this by preparing the query with placeholder values
-	$query = 'INSERT INTO Salesforce(contactid, lastname, firstname, address, city) VALUES(:contactid, :lastname, :firstname, :address, :city)';
+	$query = 'INSERT INTO Salesforce(externalid, lastname, firstname, address, city) VALUES(:externalid, :lastname, :firstname, :address, :city)';
 	$statement = $db->prepare($query);
 
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
-	$statement->bindValue(':contactid', $contactid);
+	$statement->bindValue(':externalid', $externalid);
 	$statement->bindValue(':lastname', $lastname);
 	$statement->bindValue(':firstname', $firstname);
 	$statement->bindValue(':address', $address);

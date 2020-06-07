@@ -27,8 +27,8 @@ $db = get_db();
 
 <form id="mainForm" action="insertToSalesforce.php" method="POST">
 
-	<input type="text" id="contactid" name="contactid"></input>
-	<label for="contactid">Contact ID</label>
+	<input type="text" id="externalid" name="externalid"></input>
+	<label for="externalid">External ID</label>
 	<br /><br />
 
 	<input type="text" id="lastname" name="lastname"></input>
