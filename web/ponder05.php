@@ -46,5 +46,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	echo "<p><strong>$firstname </strong> - \"$lastname\"<p>";
 }
 ?>
+
+<a href="dynamicsEntry.php">Insert new Contact to Dynamics</a>
 </body>
 </html>

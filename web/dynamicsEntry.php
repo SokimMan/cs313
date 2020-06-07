@@ -7,18 +7,18 @@ $db = get_db();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Salesforce Contact Entry</title>
+	<title>Dynamics Contact Entry</title>
 </head>
 
 <body>
 <div>
 
-<h1>Enter a New Contact into the Salesforce database</h1>
+<h1>Enter a New Contact into the Dynamics database</h1>
 
-<form id="mainForm" action="insertToSalesforce.php" method="POST">
+<form id="mainForm" action="insertToDynamics.php" method="POST">
 
-	<input type="text" id="externalid" name="externalid"></input>
-	<label for="externalid">External ID</label>
+	<input type="text" id="contactid" name="contactid"></input>
+	<label for="contactid">Contact ID</label>
 	<br /><br />
 
 	<input type="text" id="lastname" name="lastname"></input>
@@ -39,7 +39,7 @@ $db = get_db();
 
 	<br />
 
-	<input type="submit" value="Add to Salesforce" />
+	<input type="submit" value="Add to Dynamics" />
 
 </form>
 
