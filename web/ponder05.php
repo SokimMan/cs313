@@ -12,13 +12,15 @@ $db = get_db();
 	</head>
 <body>
 
-<form method="post"> 
+
+<!--<form method="post"> 
     <input type="submit" name="displaySalesforce" id="displaySalesforce" 
             class="button" value="Display Salesforce Data" /> 
           
     <input type="submit" name="displayDynamics" id="displayDynamics" 
             class="button" value="Display Dynamics Data" /> 
 </form>
+-->
 
 <?php
 	function displaySalesforceData() {
@@ -76,6 +78,9 @@ $db = get_db();
     //}
 
 ?>
+
+<input type="submit" class="button" name="displaySalesforce" value="displaySalesforce" />
+<input type="submit" class="button" name="displayDynamics" value="displayDynamics" />
 
 <a href="salesforceEntry.php">Insert new Contact to Salesforce</a>
 <a href="salesforceUpdate.php">Modify Existing Contact in Salesforce</a>
