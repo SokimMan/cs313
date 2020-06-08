@@ -5,15 +5,18 @@ $db = get_db();
 
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>
+			Contacts Verification Tool
+		</title>
+	</head>
 <body>
 
-<h4>Salesforce Contacts:</h4>
-
 <?php
-	if(array_key_exists('salesforceButton', $_POST)) { 
+	if(array_key_exists('displaySalesforceData', $_POST)) { 
         displaySalesforceData(); 
     } 
-    else if(array_key_exists('dynamicsButton', $_POST)) { 
+    else if(array_key_exists('displayDynamicsData', $_POST)) { 
         displayDynamicsData(); 
     } 
 
@@ -56,13 +59,12 @@ $db = get_db();
 ?>
 
 <form method="post"> 
-    <input type="submit" name="salesforceButton"
+    <input type="submit" name="displaySalesforceData"
             class="button" value="Display Salesforce Data" /> 
           
-    <input type="submit" name="dynamicsButton"
+    <input type="submit" name="displayDynamicsData"
             class="button" value="Display Dynamics Data" /> 
 </form>
-</head> 
 
 <a href="salesforceEntry.php">Insert new Contact to Salesforce</a>
 <a href="salesforceUpdate.php">Modify Existing Contact in Salesforce</a>
