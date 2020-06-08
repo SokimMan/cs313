@@ -37,3 +37,6 @@ VALUES
 INSERT INTO dynamics (ContactID, lastname, firstname, address, city)
 VALUES
 ('X15', 'Mikos', 'Caden', '13568 W Montebello Ave', 'Phoenix');
+
+SELECT * FROM Salesforce
+INNER JOIN Dynamics ON  Salesforce.externalid = Dynamics.contactid;
