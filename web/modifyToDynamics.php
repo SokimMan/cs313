@@ -1,6 +1,6 @@
 <?php
 
-$externalid = $_POST['externalid'];
+$contactid = $_POST['contactid'];
 $lastname = $_POST['lastname'];
 $firstname = $_POST['firstname'];
 $address = $_POST['address'];
@@ -12,10 +12,10 @@ $db = get_db();
 
 try
 {
-	$query = 'INSERT INTO Salesforce(externalid, lastname, firstname, address, city) VALUES(:externalid, :lastname, :firstname, :address, :city)';
+	$query = 'UPDATE Dynamics SET lastname = :lastname, firstname = :firstname, address = :address, city = :city WHERE contactid = :contactid';
 	$statement = $db->prepare($query);
 
-	$statement->bindValue(':externalid', $externalid);
+	$statement->bindValue(':contactid', $contactid);
 	$statement->bindValue(':lastname', $lastname);
 	$statement->bindValue(':firstname', $firstname);
 	$statement->bindValue(':address', $address);
@@ -35,5 +35,4 @@ catch (Exception $ex)
 header("Location: ponder05.php");
 
 die(); 
-
 ?>

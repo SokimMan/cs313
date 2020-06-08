@@ -12,7 +12,7 @@ $db = get_db();
 
 try
 {
-	$query = 'INSERT INTO Salesforce(externalid, lastname, firstname, address, city) VALUES(:externalid, :lastname, :firstname, :address, :city)';
+	$query = 'UPDATE Salesforce SET lastname = :lastname, firstname = :firstname, address = :address, city = :city WHERE externalid = :externalid';
 	$statement = $db->prepare($query);
 
 	$statement->bindValue(':externalid', $externalid);
