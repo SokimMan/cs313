@@ -61,7 +61,8 @@ $db = get_db();
           
     <input type="submit" name="dynamicsButton"
             class="button" value="Display Dynamics Data" /> 
-</form> 
+</form>
+</head> 
 
 <a href="salesforceEntry.php">Insert new Contact to Salesforce</a>
 <a href="salesforceUpdate.php">Modify Existing Contact in Salesforce</a>
