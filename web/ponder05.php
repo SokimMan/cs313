@@ -19,7 +19,7 @@ function displaySalesforceData() {
 			$address = $row['address'];
 			$city = $row['city'];
 
-			echo "<p><strong>$firstname $lastname:</strong> ($externalid)<p>";
+			echo "<p><strong>$firstname $lastname:</strong> $externalid<p>";
 			echo "<p>	$address, $city <p>";
 			echo "</br>";
 		}
@@ -38,7 +38,7 @@ function displaySalesforceData() {
 			$address = $row['address'];
 			$city = $row['city'];
 
-			echo "<p><strong>$firstname $lastname:</strong> ($contactid)<p>";
+			echo "<p><strong>$firstname $lastname:</strong> $contactid<p>";
 			echo "<p>$address, $city <p>";
 			echo "</br>";
 		}
