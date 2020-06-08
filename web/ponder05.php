@@ -28,7 +28,6 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 
 	echo "<p><strong>$firstname $lastname:</strong><p>";
-	echo "</br>";
 	echo "<p>	$address, $city <p>";
 	echo "</br>";
 
