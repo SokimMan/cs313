@@ -21,10 +21,8 @@ $db = get_db();
     } 
 
 	function displaySalesforceData() {
-		require "dbConnect.php";
-		$db = get_db();
 
-		$statement = $db->prepare("SELECT firstname, lastname, address, city FROM Salesforce");
+		$statement = $db->prepare("SELECT externalid, firstname, lastname, address, city FROM Salesforce");
 		$statement->execute();
 
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -42,10 +40,8 @@ $db = get_db();
 	}
 
 	function displayDynamicsData() {
-		require "dbConnect.php";
-		$db = get_db();
-		
-		$statement = $db->prepare("SELECT firstname, lastname, address, city FROM Dynamics");
+
+		$statement = $db->prepare("SELECT contactid, firstname, lastname, address, city FROM Dynamics");
 		$statement->execute();
 
 		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
