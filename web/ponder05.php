@@ -59,7 +59,7 @@ $db = get_db();
 	}
 ?>
 
-<form method="post"> 
+<form method="post" action="ponder05.php"> 
     <input type="submit" name="displaySalesforceData"
             class="button" value="Display Salesforce Data" /> 
           
