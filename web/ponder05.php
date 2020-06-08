@@ -21,6 +21,8 @@ $db = get_db();
     } 
 
 	function displaySalesforceData() {
+		require "dbConnect.php";
+		$db = get_db();
 
 		$statement = $db->prepare("SELECT firstname, lastname, address, city FROM Salesforce");
 		$statement->execute();
@@ -40,6 +42,9 @@ $db = get_db();
 	}
 
 	function displayDynamicsData() {
+		require "dbConnect.php";
+		$db = get_db();
+		
 		$statement = $db->prepare("SELECT firstname, lastname, address, city FROM Dynamics");
 		$statement->execute();
 
