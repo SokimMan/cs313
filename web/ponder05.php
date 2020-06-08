@@ -13,12 +13,20 @@ $db = get_db();
 <body>
 
 <?php
-	if(array_key_exists('displaySalesforceData', $_POST)) { 
-        displaySalesforceData(); 
-    } 
-    else if(array_key_exists('displayDynamicsData', $_POST)) { 
-        displayDynamicsData(); 
-    } 
+	//if(array_key_exists('displaySalesforceData', $_POST)) { 
+    //    displaySalesforceData(); 
+    //} 
+    //else if(array_key_exists('displayDynamicsData', $_POST)) { 
+    //    displayDynamicsData(); 
+    //}
+
+    if ($_GET) {
+        if (isset($_GET['displaySalesforceData'])) {
+            displaySalesforceData();
+        } elseif (isset($_GET['displayDynamicsData'])) {
+            displayDynamicsData();
+        }
+    }
 
 	function displaySalesforceData() {
 
