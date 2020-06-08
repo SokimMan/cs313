@@ -12,6 +12,14 @@ $db = get_db();
 	</head>
 <body>
 
+<form method="post"> 
+    <input type="submit" name="displaySalesforceData"
+            class="button" value="Display Salesforce Data" /> 
+          
+    <input type="submit" name="displayDynamicsData"
+            class="button" value="Display Dynamics Data" /> 
+</form>
+
 <?php
 	//if(array_key_exists('displaySalesforceData', $_POST)) { 
     //    displaySalesforceData(); 
@@ -66,14 +74,6 @@ $db = get_db();
 		}
 	}
 ?>
-
-<form method="post"> 
-    <input type="hidden" name="displaySalesforceData"
-            class="button" value="Display Salesforce Data" /> 
-          
-    <input type="hidden" name="displayDynamicsData"
-            class="button" value="Display Dynamics Data" /> 
-</form>
 
 <a href="salesforceEntry.php">Insert new Contact to Salesforce</a>
 <a href="salesforceUpdate.php">Modify Existing Contact in Salesforce</a>
