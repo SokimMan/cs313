@@ -10,46 +10,66 @@ $db = get_db();
 <h4>Salesforce Contacts:</h4>
 
 <?php
-$statement = $db->prepare("SELECT firstname, lastname, address, city FROM Salesforce");
-$statement->execute();
+	if(array_key_exists('salesforceButton', $_POST)) { 
+        displaySalesforceData(); 
+    } 
+    else if(array_key_exists('dynamicsButton', $_POST)) { 
+        displayDynamicsData(); 
+    } 
 
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-{
-	$firstname = $row['firstname'];
-	$lastname = $row['lastname'];
-	$address = $row['address'];
-	$city = $row['city'];
+	function displaySalesforceData() {
 
-	echo "<p><strong>$firstname $lastname:</strong><p>";
-	echo "<p>	$address, $city <p>";
-	echo "</br>";
-}
+		$statement = $db->prepare("SELECT firstname, lastname, address, city FROM Salesforce");
+		$statement->execute();
+
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		{
+			$externalid = $row['externalid'];
+			$firstname = $row['firstname'];
+			$lastname = $row['lastname'];
+			$address = $row['address'];
+			$city = $row['city'];
+
+			echo "<p><strong>$firstname $lastname:</strong> ($externalid)<p>";
+			echo "<p>	$address, $city <p>";
+			echo "</br>";
+		}
+	}
+
+	function displayDynamicsData() {
+		$statement = $db->prepare("SELECT firstname, lastname, address, city FROM Dynamics");
+		$statement->execute();
+
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		{
+			$contactid = $row['contactid'];
+			$firstname = $row['firstname'];
+			$lastname = $row['lastname'];
+			$address = $row['address'];
+			$city = $row['city'];
+
+			echo "<p><strong>$firstname $lastname:</strong> ($contactid)<p>";
+			echo "<p>$address, $city <p>";
+			echo "</br>";
+		}
+	}
 ?>
+
+<form method="post"> 
+    <input type="submit" name="salesforceButton"
+            class="button" value="Display Salesforce Data" /> 
+          
+    <input type="submit" name="dynamicsButton"
+            class="button" value="Display Dynamics Data" /> 
+</form> 
 
 <a href="salesforceEntry.php">Insert new Contact to Salesforce</a>
 <a href="salesforceUpdate.php">Modify Existing Contact in Salesforce</a>
 
-<h4>Dynamics Contacts:</h4>
-
-<?php
-$statement = $db->prepare("SELECT firstname, lastname, address, city FROM Dynamics");
-$statement->execute();
-
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-{
-
-	$firstname = $row['firstname'];
-	$lastname = $row['lastname'];
-	$address = $row['address'];
-	$city = $row['city'];
-
-	echo "<p><strong>$firstname $lastname:</strong><p>";
-	echo "<p>$address, $city <p>";
-	echo "</br>";
-}
-?>
+<br>
 
 <a href="dynamicsEntry.php">Insert new Contact to Dynamics</a>
 <a href="dynamicsUpdate.php">Modify Existing Contact in Dynamics</a>
+
 </body>
 </html>
