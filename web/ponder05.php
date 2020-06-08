@@ -12,7 +12,7 @@ $db = get_db();
 <h1>Salesforce Contacts:</h1>
 
 <?php
-$statement = $db->prepare("SELECT firstname, lastname FROM Salesforce");
+$statement = $db->prepare("SELECT firstname, lastname, address, city FROM Salesforce");
 $statement->execute();
 
 // Go through each result
@@ -23,15 +23,22 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	// name
 	$firstname = $row['firstname'];
 	$lastname = $row['lastname'];
+	$address = $row['address'];
+	$city = $row['city'];
 
-	echo "<p><strong>$firstname </strong> - \"$lastname\"<p>";
+
+	echo "<p><strong>$firstname $lastname:</strong><p>";
+	echo "</br>";
+	echo "<p>	$address, $city <p>";
+	echo "</br>";
+
 }
 ?>
 
 <a href="salesforceEntry.php">Insert new Contact to Salesforce</a>
 
 <?php
-$statement = $db->prepare("SELECT firstname, lastname FROM Dynamics");
+$statement = $db->prepare("SELECT firstname, lastname, address, city FROM Dynamics");
 $statement->execute();
 
 // Go through each result
@@ -42,8 +49,11 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	// name
 	$firstname = $row['firstname'];
 	$lastname = $row['lastname'];
+	$address = $row['address'];
+	$city = $row['city'];
 
-	echo "<p><strong>$firstname </strong> - \"$lastname\"<p>";
+
+	echo "<p><strong>$firstname $lastname</strong><p>";
 }
 ?>
 
