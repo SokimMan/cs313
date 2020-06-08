@@ -17,17 +17,28 @@ $db = get_db();
     	<input type="submit" value="Display Salesforce Contacts" />
 	</form>
 
+	<form action="salesforceEntry.php">
+    	<input type="submit" value="Insert new Contact to Salesforce" />
+	</form>
+
+	<form action="salesforceUpdate.php">
+    	<input type="submit" value="Modify Existing Contact in Salesforce" />
+	</form>
+
+	<br>
+
 	<form action="displayDynamics.php">
     	<input type="submit" value="Display Dynamics Contacts" />
 	</form>
 
-<a href="salesforceEntry.php">Insert new Contact to Salesforce</a>
-<a href="salesforceUpdate.php">Modify Existing Contact in Salesforce</a>
+	<form action="dynamicsEntry.php">
+    	<input type="submit" value="Insert new Contact to Dynamics" />
+	</form>
 
-<br>
+	<form action="dynamicsUpdate.php">
+    	<input type="submit" value="Modify Existing Contact in Dynamics" />
+	</form>
 
-<a href="dynamicsEntry.php">Insert new Contact to Dynamics</a>
-<a href="dynamicsUpdate.php">Modify Existing Contact in Dynamics</a>
 
 </body>
 </html>
