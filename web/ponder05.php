@@ -13,29 +13,14 @@ $db = get_db();
 <body>
 
 <form method="post"> 
-    <input type="submit" name="displaySalesforceData"
+    <input type="submit" name="displaySalesforce" id="displaySalesforce" 
             class="button" value="Display Salesforce Data" /> 
           
-    <input type="submit" name="displayDynamicsData"
+    <input type="submit" name="displayDynamics" id="displayDynamics" 
             class="button" value="Display Dynamics Data" /> 
 </form>
 
 <?php
-	//if(array_key_exists('displaySalesforceData', $_POST)) { 
-    //    displaySalesforceData(); 
-    //} 
-    //else if(array_key_exists('displayDynamicsData', $_POST)) { 
-    //    displayDynamicsData(); 
-    //}
-
-    if ($_GET) {
-        if (isset($_GET['displaySalesforceData'])) {
-            displaySalesforceData();
-        } elseif (isset($_GET['displayDynamicsData'])) {
-            displayDynamicsData();
-        }
-    }
-
 	function displaySalesforceData() {
 
 		$statement = $db->prepare("SELECT externalid, firstname, lastname, address, city FROM Salesforce");
@@ -73,6 +58,23 @@ $db = get_db();
 			echo "</br>";
 		}
 	}
+
+
+	if(array_key_exists('displaySalesforce', $_POST)) { 
+        displaySalesforceData(); 
+    } 
+    else if(array_key_exists('displayDynamics', $_POST)) { 
+        displayDynamicsData(); 
+    }
+
+    //if ($_GET) {
+        //if (isset($_GET['displaySalesforceData'])) {
+        //    displaySalesforceData();
+        //} elseif (isset($_GET['displayDynamicsData'])) {
+        //    displayDynamicsData();
+        //}
+    //}
+
 ?>
 
 <a href="salesforceEntry.php">Insert new Contact to Salesforce</a>
