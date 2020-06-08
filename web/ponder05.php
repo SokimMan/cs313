@@ -1,6 +1,49 @@
 <?php
 require "dbConnect.php";
 $db = get_db();
+
+if(isset($_POST['displaySalesforceData'])) {
+    displaySalesforceData();
+}
+
+function displaySalesforceData() {
+
+		$statement = $db->prepare("SELECT externalid, firstname, lastname, address, city FROM Salesforce");
+		$statement->execute();
+
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		{
+			$externalid = $row['externalid'];
+			$firstname = $row['firstname'];
+			$lastname = $row['lastname'];
+			$address = $row['address'];
+			$city = $row['city'];
+
+			echo "<p><strong>$firstname $lastname:</strong> ($externalid)<p>";
+			echo "<p>	$address, $city <p>";
+			echo "</br>";
+		}
+	}
+
+	function displayDynamicsData() {
+
+		$statement = $db->prepare("SELECT contactid, firstname, lastname, address, city FROM Dynamics");
+		$statement->execute();
+
+		while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+		{
+			$contactid = $row['contactid'];
+			$firstname = $row['firstname'];
+			$lastname = $row['lastname'];
+			$address = $row['address'];
+			$city = $row['city'];
+
+			echo "<p><strong>$firstname $lastname:</strong> ($contactid)<p>";
+			echo "<p>$address, $city <p>";
+			echo "</br>";
+		}
+	}
+
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +64,7 @@ $db = get_db();
             class="button" value="Display Dynamics Data" /> 
 </form>
 -->
-
-<?php
+<!--
 	function displaySalesforceData() {
 
 		$statement = $db->prepare("SELECT externalid, firstname, lastname, address, city FROM Salesforce");
@@ -76,11 +118,11 @@ $db = get_db();
         //    displayDynamicsData();
         //}
     //}
+-->
 
-?>
-
-<input type="submit" class="button" name="displaySalesforce" value="displaySalesforce" />
-<input type="submit" class="button" name="displayDynamics" value="displayDynamics" />
+<form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
+    <input type="button" name="displaySalesforceData" value="Salesforce">
+</form>
 
 <a href="salesforceEntry.php">Insert new Contact to Salesforce</a>
 <a href="salesforceUpdate.php">Modify Existing Contact in Salesforce</a>
