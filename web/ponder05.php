@@ -68,10 +68,10 @@ $db = get_db();
 ?>
 
 <form method="post"> 
-    <input type="submit" name="displaySalesforceData"
+    <input type="hidden" name="displaySalesforceData"
             class="button" value="Display Salesforce Data" /> 
           
-    <input type="submit" name="displayDynamicsData"
+    <input type="hidden" name="displayDynamicsData"
             class="button" value="Display Dynamics Data" /> 
 </form>
 
