@@ -34,7 +34,7 @@ foreach ($items as $item)
 
 
 <?
-echo "<form method="POST" action="confirm.php">";
+echo "<form method="POST" action="view.php">";
 foreach ($items as $item)
 {
 	$item_clean = htmlspecialchars($item);
