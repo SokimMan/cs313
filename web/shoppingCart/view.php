@@ -18,23 +18,22 @@ $items = $_POST["cart"];
 </head>
 
 <body>
+
 	<h1>Confirmation Page</h1>
 
 	<p>The following items are in your cart:</p>
+	
 	<ul>
 
-<?
-foreach ($items as $item)
-{
-	$item_clean = htmlspecialchars($item);
-	<p>$item_clean</p>;
-}
-?>			
+	<?
+	foreach ($items as $item)
+	{
+		$item_clean = htmlspecialchars($item);
+		echo "<li><p>$item_clean</p></li>";
+	}
+	?>			
 
 	</ul>
 
-
 </body>
-
-
 </html>
