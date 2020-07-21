@@ -24,16 +24,16 @@ $items = $_POST["cart"];
 	<p>The following items are in your cart:</p>
 	
 	<?
-	echo "<form method="POST" action="confirm.php">";
+	echo "<form method='POST' action='confirm.php'>";
 	foreach ($items as $item)
 	{
-		echo "<input type="hidden" name="confirm[]" id=$item value=$item><br /><br />";
+		echo "<input type='hidden' name='confirm[]' id=$item value=$item><br /><br />";
 	}
-	echo "<input type="text" id = "credit" name = "credit"> Credit Card<br /><br />";
-	echo "<input type="text" id = 'address' name = 'address'> Address<br /><br />";
-	echo "<input type="text" id = 'zip' name = 'zip'> Zip Code<br /><br />";
-	echo "<input type="text" id = 'city' name = 'city'> City<br /><br />";
-	echo "<input type="text" id = 'state' name = 'state'> State<br /><br />";
+	echo "<input type='text' id = 'credit' name = 'credit'> Credit Card<br /><br />";
+	echo "<input type='text' id = 'address' name = 'address'> Address<br /><br />";
+	echo "<input type='text' id = 'zip' name = 'zip'> Zip Code<br /><br />";
+	echo "<input type='text' id = 'city' name = 'city'> City<br /><br />";
+	echo "<input type='text' id = 'state' name = 'state'> State<br /><br />";
 	echo "<input type='submit' value='Confirm Cart'>";
 	?>
 
