@@ -35,9 +35,9 @@ $items = $_POST["items"];
 	</ul>
 
 <?
-	echo "<form method="POST" action="view.php">";
-	echo "<input type="checkbox" name="cart[]" id="$items[0]" value="$items[0]"><label for="$items[0]">Xbox</label><br /><br />";
-	echo "<input type="submit" value="Submit Answers">";
+	echo "<form method='POST' action='view.php'>";
+	echo "<input type='checkbox' name='cart[]' id=$items[0] value=$items[0]><label for=$items[0]>Xbox</label><br /><br />";
+	echo "<input type='submit' value='Submit Answers'>";
 ?>
 
 
