@@ -32,16 +32,6 @@ $comments = htmlspecialchars($_POST["comments"]);
 	}
 	?>			
 
-	<form method="POST" action="view.php">
-	<?
-	foreach ($items as $item)
-	{
-		$item_clean = htmlspecialchars($item);
-		echo "<input type="checkbox" name="items[]" id="$item" value="$item" checked>$item<br />";
-	}
-	?>	
-	<input type="submit" value="Confirm Order">
-
 	</ul>
 
 	<p>Comments: <?=$comments?></p>
