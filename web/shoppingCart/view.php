@@ -32,6 +32,18 @@ foreach ($items as $item)
 }
 ?>		
 
+
+<?
+echo "<form method="POST" action="confirm.php">";
+foreach ($items as $item)
+{
+	$item_clean = htmlspecialchars($item);
+	echo "<input type="checkbox" name="items[]" value="$item_clean" checked>";
+}
+echo "<input type="submit" value="Check Out">";
+?>		
+
+
 	</ul>
 
 	<p>Comments: <?=$comments?></p>
