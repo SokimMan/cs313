@@ -29,7 +29,6 @@ $items = $_POST["confirm"];
 	<?
 	foreach ($items as $item)
 	{
-		$item_clean = htmlspecialchars($item);
 		echo "<li><p>$items</p></li>";
 	}
 	?>			
