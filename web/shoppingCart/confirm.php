@@ -8,7 +8,7 @@
 // then in PHP we could process that value and determine the exact
 // presentation text to render.
 
-$items = $_POST["cart"];
+$items = $_POST["confirm"];
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ $items = $_POST["cart"];
 	
 	<ul>
 
-
+	
 	<?
 	foreach ($items as $item)
 	{
@@ -35,16 +35,6 @@ $items = $_POST["cart"];
 	?>			
 
 	</ul>
-
-	<?
-	echo "<form method='POST' action='confirm.php'>";
-	foreach ($items as $item)
-	{
-		echo "<input type='hidden' name='confirm[]' id=$item value=$item checked><label for=$item>$item</label><br /><br />";
-	}
-	echo "<input type='text' id = 'credit' name = 'credit'>Credit Card<br /><br />";
-	echo "<input type='submit' value='Confirm Cart'>";
-	?>
 
 </body>
 </html>
