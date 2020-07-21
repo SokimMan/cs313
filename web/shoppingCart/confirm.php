@@ -29,7 +29,7 @@ $items = $_POST["confirm"];
 	<?
 	foreach ($items as $item)
 	{
-		echo "<li><p>$items</p></li>";
+		echo "<li><p>$item</p></li>";
 	}
 	?>			
 
