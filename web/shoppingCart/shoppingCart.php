@@ -35,8 +35,11 @@ $comments = htmlspecialchars($_POST["comments"]);
 
 	</ul>
 
-
-		
+<?
+	echo "<form method="POST" action="view.php">";
+	echo "<input type="checkbox" name="cart[]" id="$items[0]" value="$items[0]">$items[0]<br />";
+	echo "<input type="submit" value="Submit Answers">";
+?>
 
 
 </body>
