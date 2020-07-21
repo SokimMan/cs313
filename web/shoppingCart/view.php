@@ -9,9 +9,8 @@
 // presentation text to render.
 
 $items = $_POST["items"];
-$comments = htmlspecialchars($_POST["comments"]);
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +18,7 @@ $comments = htmlspecialchars($_POST["comments"]);
 </head>
 
 <body>
-	<h1>Submission Results</h1>
+	<h1>Confirmation Page</h1>
 
 	<p>The following items are in your cart:</p>
 	<ul>
@@ -30,23 +29,10 @@ foreach ($items as $item)
 	$item_clean = htmlspecialchars($item);
 	echo "<li><p>$item_clean</p></li>";
 }
-?>		
-
-
-<?
-echo "<form method="POST" action="view.php">";
-foreach ($items as $item)
-{
-	$item_clean = htmlspecialchars($item);
-	echo "<input type="checkbox" name="items[]" value="$item_clean" checked>";
-}
-echo "<input type="submit" value="Check Out">";
-?>		
-
+?>			
 
 	</ul>
 
-	<p>Comments: <?=$comments?></p>
 
 </body>
 
