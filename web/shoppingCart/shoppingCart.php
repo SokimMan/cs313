@@ -37,7 +37,7 @@ $comments = htmlspecialchars($_POST["comments"]);
 	foreach ($items as $item)
 	{
 		$item_clean = htmlspecialchars($item);
-		echo "<input type="checkbox" name="items[]" id="$item_clean" value="$item_clean" checked><label for="$item_clean">$item_clean</label><br />";
+		echo "<input type="checkbox" name="items[]" id="$item" value="$item" checked>$item<br />";
 	}
 	?>	
 	<input type="submit" value="Confirm Order">
