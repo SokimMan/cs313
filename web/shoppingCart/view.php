@@ -27,7 +27,7 @@ $items = $_POST["cart"];
 foreach ($items as $item)
 {
 	$item_clean = htmlspecialchars($item);
-	echo "<input type="checkbox" name="items[]" value=$item_clean>$item_clean<br />";
+	<p>$item_clean</p>;
 }
 ?>			
 
