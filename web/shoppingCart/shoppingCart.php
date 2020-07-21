@@ -24,8 +24,11 @@ $items = $_POST["items"];
 	
 <?
 	echo "<form method='POST' action='view.php'>";
-	echo "<input type='checkbox' name='cart[]' id=$items[0] value=$items[0]><label for=$items[0]>$items[0]</label><br /><br />";
-	echo "<input type='submit' value='Submit Answers'>";
+	foreach ($items as $item)
+	{
+		echo "<input type='checkbox' name='cart[]' id=$item value=$item "checked"><label for=$item>$item</label><br /><br />";
+	}
+	echo "<input type='submit' value='Confirm Cart'>";
 ?>
 
 
