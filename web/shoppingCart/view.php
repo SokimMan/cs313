@@ -8,7 +8,7 @@
 // then in PHP we could process that value and determine the exact
 // presentation text to render.
 
-$items = $_POST["items"];
+$items = $_POST["cart"];
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ $items = $_POST["items"];
 foreach ($items as $item)
 {
 	$item_clean = htmlspecialchars($item);
-	echo "<input type="checkbox" name="items[]" value="$item_clean">$item_clean<br />";
+	echo "<input type="checkbox" name="items[]" value=$item_clean>$item_clean<br />";
 }
 ?>			
 
