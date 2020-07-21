@@ -27,7 +27,7 @@ $items = $_POST["items"];
 foreach ($items as $item)
 {
 	$item_clean = htmlspecialchars($item);
-	echo "<li><p>$item_clean</p></li>";
+	echo "<input type="checkbox" name="items[]" value="$item_clean">$item_clean<br />";
 }
 ?>			
 
