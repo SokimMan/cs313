@@ -31,7 +31,7 @@ $items = $_POST["items"];
 	echo "<input type='submit' value='Confirm Cart'>";
 ?>
 
-<form action="browse.html">
+<form action="shoppingCart\browse.html">
     <button type="submit">Keep Shopping</button>
 </form>
 
