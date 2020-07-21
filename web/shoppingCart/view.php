@@ -7,10 +7,8 @@
 // value that is submitted such as "cs" as opposed to "Computer Science",
 // then in PHP we could process that value and determine the exact
 // presentation text to render.
-$name = htmlspecialchars($_POST["name"]);
-$email = htmlspecialchars($_POST["email"]);
-$major = htmlspecialchars($_POST["major"]);
-$places = $_POST["places"];
+
+$items = $_POST["items"];
 $comments = htmlspecialchars($_POST["comments"]);
 
 ?>
@@ -23,17 +21,14 @@ $comments = htmlspecialchars($_POST["comments"]);
 <body>
 	<h1>Submission Results</h1>
 
-	<p>Your name is: <?=$name ?></p>
-	<p>Your email is: <a href="mailto:<?=$email ?>"><?=$email ?></a></p>
-	<p>Your major is: <?=$major ?></p>
-	<p>You have been to the following places:</p>
+	<p>The following items are in your cart:</p>
 	<ul>
 
 <?
-foreach ($places as $place)
+foreach ($items as $item)
 {
-	$place_clean = htmlspecialchars($place);
-	echo "<li><p>$place_clean</p></li>";
+	$item_clean = htmlspecialchars($item);
+	echo "<li><p>$item_clean</p></li>";
 }
 ?>		
 
