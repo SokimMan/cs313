@@ -22,21 +22,9 @@ $items = $_POST["items"];
 
 	<p>Your Shopping Cart:</p>
 	
-	<ul>
-
-	<?
-	foreach ($items as $item)
-	{
-		$item_clean = htmlspecialchars($item);
-		echo "<li><p>$item_clean</p></li>";
-	}
-	?>		
-
-	</ul>
-
 <?
 	echo "<form method='POST' action='view.php'>";
-	echo "<input type='checkbox' name='cart[]' id=$items[0] value=$items[0]><label for=$items[0]>Xbox</label><br /><br />";
+	echo "<input type='checkbox' name='cart[]' id=$items[0] value=$items[0]><label for=$items[0]>$items[0]</label><br /><br />";
 	echo "<input type='submit' value='Submit Answers'>";
 ?>
 
