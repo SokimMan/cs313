@@ -9,7 +9,6 @@
 // presentation text to render.
 
 $items = $_POST["items"];
-$comments = htmlspecialchars($_POST["comments"]);
 
 ?>
 <!DOCTYPE html>
