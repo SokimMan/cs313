@@ -22,6 +22,7 @@ $comments = htmlspecialchars($_POST["comments"]);
 	<h1>Submission Results</h1>
 
 	<p>Your Shopping Cart:</p>
+	
 	<ul>
 
 	<?
@@ -34,18 +35,17 @@ $comments = htmlspecialchars($_POST["comments"]);
 
 	</ul>
 
-<form method="POST" action="shoppingCart.php">
 	<?
+	echo "<form method="POST" action="view.php">";
 	foreach ($items as $item)
 	{
 		$item_clean = htmlspecialchars($item);
-		echo "<input type="checkbox" name="items[]" value="$item_clean">$item_clean<br />";
+		echo "<input type="checkbox" name="cart[]" value="$item_clean">$item_clean<br />";
 	}
+	echo "<input type="submit" value="Submit Answers">	";
 	?>
-	<input type="submit" value="Submit Answers">			
+		
 
-
-	<p>Comments: <?=$comments?></p>
 
 </body>
 
