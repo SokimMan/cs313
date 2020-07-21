@@ -14,14 +14,14 @@ $items = $_POST["confirm"];
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Submission Results</title>
+	<title>Confirmation Page</title>
 </head>
 
 <body>
 
 	<h1>Confirmation Page</h1>
 
-	<p>The following items are in your cart:</p>
+	<p>Your order for the following items has been processed:</p>
 	
 	<ul>
 
@@ -35,6 +35,8 @@ $items = $_POST["confirm"];
 	?>			
 
 	</ul>
+
+	<p>Thank you for shopping with us:</p>
 
 </body>
 </html>
